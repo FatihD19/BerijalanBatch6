@@ -2,17 +2,21 @@ import { View} from 'react-native'
 import React from 'react'
 
 import Text from "./component/Text"
+import Profile from './screen/Profile'
 
+import {SafeAreaProvider} from "react-native-safe-area-context";
+import { NavigationContainer } from '@react-navigation/native';
 
-
+import Routes from "./service/router"
+const AppNavigator = Routes;
 const IndexLayout = () => {
 
-    
-    
   return (
-    <View style={{flex:1,paddingTop:20}}>
-     <Text bold fontSize={50}>SENNND</Text>
-    </View>
+  <SafeAreaProvider>
+    <NavigationContainer>
+      <AppNavigator/>
+    </NavigationContainer>
+  </SafeAreaProvider>
   )
 }
 
