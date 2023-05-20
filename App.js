@@ -8,6 +8,8 @@ import* as SplashScreen from 'expo-splash-screen';
 import fonts from './app/assets/fonts';
 
 import IndexLayout from './app/index';
+import { Provider } from 'react-redux';
+import { store } from './app/store/storage';
 
 
 const App = () => {
@@ -26,9 +28,12 @@ const App = () => {
     }, []);
   return (
     <Fragment>
-        <SafeAreaProvider>
+        <Provider store={store}>
+        
+          <SafeAreaProvider>
            <IndexLayout/>
         </SafeAreaProvider>
+        </Provider>
     </Fragment>
   )
 }

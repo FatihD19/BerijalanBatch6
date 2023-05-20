@@ -12,7 +12,7 @@ const AppNavigator = Routes;
 const IndexLayout = () => {
 
   return (
-  <SafeAreaProvider>
+  <SafeAreaProvider style={{flex:1}}>
     <NavigationContainer>
       <AppNavigator/>
     </NavigationContainer>

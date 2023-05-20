@@ -1,6 +1,13 @@
 import HomeIcon from "./svg/home.svg";
+import ProfileIcon from "./svg/profile.svg";
+import PerformIcon from "./svg/perform.svg";
+import TaskIcon from  "./svg/task.svg"
+import CanvasIcon from "./svg/leads.svg";
+import EyeIcon from "./svg/eye.svg";
+import EyeSlashIcon from "./svg/eyeSlash.svg";
 
-export {HomeIcon};
+
+export {HomeIcon,ProfileIcon,PerformIcon,TaskIcon,CanvasIcon,EyeIcon,EyeSlashIcon};
 export default {
    BG_PROFILE: require("./bgProfile.png"),
    IMG_PERSON2: require("./person2.png"),
@@ -10,5 +17,7 @@ export default {
    ABOUT:require("./about.png"),
    PRIVACY:require("./privacy.png"),
    ARROW:require("./arrow.png"),
+   BG_SCREEN:require("./bgscreen.png"),
+   ADD_LEADS:require("./addLead.png")
 
 };

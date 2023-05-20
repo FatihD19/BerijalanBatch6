@@ -1,12 +1,32 @@
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button,Image } from 'react-native'
 import React from 'react'
 
 import{createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Profile from '../Profile';
 import Home from '../Home';
-import { HomeIcon } from '../../assets/images';
+import Perform from '../perform';
+import Task from '../Task';
+import Leads from '../Canvas';
+import images, { HomeIcon,ProfileIcon,TaskIcon,PerformIcon,CanvasIcon } from '../../assets/images';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Tab = createBottomTabNavigator();
+const AddBarButton = ()=>(
+  <View >
+  <TouchableOpacity style={{alignItems:"center"}}>
+  <Image
+    source={images.ADD_LEADS}
+    resizeMode="cover"
+    height={25}
+    width={25}
+    style={{
+      top:-9,
+      alignItems:"center",
+    }}
+  />
+  </TouchableOpacity>
+  </View>
+);
 const Main = ({navigation,route}) => {
   return (
     <View style={{flex:1}}>
@@ -19,7 +39,15 @@ const Main = ({navigation,route}) => {
         tabBarIcon:({focused,color,size})=>{
             let tabBarIcon={
                 Home: 
-                <HomeIcon width={size} height={size} fill={color}/>
+                <HomeIcon width={size} height={size} fill={color}/>,
+                 Task:
+                <TaskIcon width={size} height={size} fill={color}/>,
+                Add:
+                <AddBarButton />,
+                 Perform:
+                <PerformIcon width={size} height={size} fill={color}/>,
+                Profile:
+                <ProfileIcon width={size} height={size} fill={color}/>
             };
             return <View>{tabBarIcon[route.name]}</View>
         },
@@ -32,7 +60,15 @@ const Main = ({navigation,route}) => {
       }
       >
         <Tab.Screen name='Home' component={Home}/>
+         <Tab.Screen name='Task' component={Task}/>
+          <Tab.Screen name='Add' component={Leads} 
+          options={{
+            tabBarStyle:{display:"none"}
+          }}
+          />
+          <Tab.Screen name='Perform' component={Perform}/>
         <Tab.Screen name='Profile' component={Profile}/>
+        
       </Tab.Navigator>
     </View>
   )

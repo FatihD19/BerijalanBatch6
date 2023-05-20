@@ -82,13 +82,12 @@ const Profile = () => {
              <Image
                 source={images.PRIVACY}
                 style={{
-                    marginLeft:150,
-                    flex:1,
+                    
                     resizeMode:"contain",
                     width: 96 ,height:35,
                 }}
             />
-             <Text bold style={{flex:1}}>Team</Text>
+             <Text bold style={{flex:1}}>Privacy and Security</Text>
         </View>
         </View>
     </View>
